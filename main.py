@@ -4,30 +4,25 @@ from Factory import *
 import sys
 
 
-print("******* \n Welcome to Sam's Option Scanner \n *******")
-
-obj = financeObj("INTC")
+ticker = sys.argv[-1]
+obj = financeObj(ticker)
 
 # bj.pickTicker()
 
 
 factory = Factory(obj)
-factory.CallsOIMap()
-factory.CallsVolume3D()
-factory.CallsVolumeMap()
+#factory.CallsOIMap()
+#factory.CallsVolume3D()
+#factory.CallsVolumeMap()
 
-factory.PutsVolume3D()
-factory.PutsVolumeMap()
+#factory.PutsVolume3D()
+#factory.PutsVolumeMap()
 
-
+print("Ticker is " + ticker)
 def repeat():
-    print("PICK ONE: pickTicker, pickStrike, optionChain, OIimage, CallsVolumeMap, CallsOIMap, PutsVolumeMap, PutsOIMap, CallsVolume3D, CallsOI3D, PutsVolume3D, PutsOI3D, exit")
+    print("PICK ONE: optionChain, OIimage, CallsVolumeMap, CallsOIMap, PutsVolumeMap, PutsOIMap, CallsVolume3D, CallsOI3D, PutsVolume3D, PutsOI3D, exit")
     choice = input().lower()
-    if choice == "pickticker":
-        obj.pickTicker()
-        factory.update()
-        repeat()
-    elif choice == "pickstrike":
+    if choice == "pickstrike":
         obj.pickStrike()
         factory.update()
         repeat()

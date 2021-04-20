@@ -1,7 +1,7 @@
 # OBJECT BASED OptionsAnalyzer (BETA VERSION)
-* Run autoPIP.sh by typing sh autoPIP.sh in terminal in your IDE to install all required modules
 
-## This version automatically prompts you to pick the stock ticker and configures everything for you
+## Example use:
+python3 main.py TTD
 
 ### Open Interest 3D Graph
 ![oi3d](https://user-images.githubusercontent.com/28206070/79798601-dc823600-831e-11ea-90da-963d36b70dbd.png)

@@ -63,8 +63,9 @@ class Factory:
         tempFrame = pd.DataFrame(putData)
         tempFrame.rename(columns={'openInterest': 'Puts'}, inplace=True)
         finalFrame = pd.merge(finalFrame, tempFrame, on='strike')
-        finalFrame.plot.bar(figsize=(20, 8), x="strike", y=["Calls", "Puts"],
+        ax = finalFrame.plot.bar(figsize=(40, 8), x="strike", y=["Calls", "Puts"],
                             title="Open Interest for "+self.ticker.upper()+" all options at every strike on "+self.strikeChoice)
+        plt.xticks(fontsize=6)
         plt.show()
         plt.clf()
 
@@ -162,6 +163,7 @@ class Factory:
         ax.w_yaxis.set_ticklabels(eg.columns)
         ax.w_xaxis.set_ticklabels(eg.index)
         ax.set_zlabel('Number of Contracts')
+        plt.locator_params(axis="x", nbins=10)
         plt.show()
         plt.clf()
 
